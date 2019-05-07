@@ -37,9 +37,19 @@ print(merge(a, b))
 # TO-DO: implement the Merge Sort function below USING RECURSION
 def merge_sort( arr ):
     # TO-DO
-
+    if arr == []:
+        return arr
+    elif len(arr) > 1:
+        left = merge_sort(arr[:int(len(arr) / 2)])
+        right = merge_sort(arr[int(len(arr) / 2):])
+        arr = merge(left, right)
     return arr
 
+c = [8, 2, 1, 9, 4, 6, 3, 7, 5]
+
+print(merge_sort(a))
+print(merge_sort(b))
+print(merge_sort(c))
 
 # STRETCH: implement an in-place merge sort algorithm
 def merge_in_place(arr, start, mid, end):
